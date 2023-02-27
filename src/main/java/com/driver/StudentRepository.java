@@ -57,9 +57,10 @@ public class StudentRepository {
     public void  deleteTeacherByName(String teacher){
 
         teacherHashMap.remove(teacher);
+        teacherStudentHashMap.remove(teacher);
       /*  List<String> students=new ArrayList<>();
         students=teacherStudentHashMap.get(teacher);
-      //  teacherStudentHashMap.remove(teacher);
+
         for(String x: students){
             if(studentHashMap.containsKey(x)){
                 studentHashMap.remove(x);
