@@ -69,7 +69,7 @@ public class StudentRepository {
 
     public void deleteAllTeachers(){
         teacherHashMap.clear();
-        studentHashMap.clear();
+       // studentHashMap.clear();
         teacherStudentHashMap.clear();
     }
 
