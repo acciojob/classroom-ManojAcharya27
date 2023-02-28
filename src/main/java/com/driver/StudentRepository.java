@@ -56,22 +56,30 @@ public class StudentRepository {
 
     public void  deleteTeacherByName(String teacher){
 
-        teacherHashMap.remove(teacher);
 
-       List<String> students=new ArrayList<>();
-        students=teacherStudentHashMap.get(teacher);
-        teacherStudentHashMap.remove(teacher);
-        for(String x: students){
-            if(studentHashMap.containsKey(x)){
-                studentHashMap.remove(x);
+        if(teacherStudentHashMap.containsKey(teacher)&&teacherHashMap.containsKey(teacher)){
+            for(String student: teacherStudentHashMap.get(teacher)){
+                studentHashMap.remove(student);
             }
+            teacherStudentHashMap.remove(teacher);
         }
     }
 
     public void deleteAllTeachers(){
-        teacherHashMap.clear();
+        /*teacherHashMap.clear();
         studentHashMap.clear();
-        teacherStudentHashMap.clear();
+        teacherStudentHashMap.clear();*/
+
+        for(String teacher: teacherHashMap.keySet()){
+            if(teacherStudentHashMap.containsKey(teacher)){
+                for(String student: teacherStudentHashMap.get(teacher)){
+                    studentHashMap.remove(student);
+                }
+                teacherStudentHashMap.remove(teacher);
+            }else{
+                teacherHashMap.remove(teacher);
+            }
+        }
     }
 
 
