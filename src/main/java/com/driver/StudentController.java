@@ -44,7 +44,7 @@ public class StudentController {
         Student student = studentService.getStudentByName(name); // Assign student by calling service layer method
 
         return new ResponseEntity<>(student, HttpStatus.CREATED);
-    }
+     }
 
     @GetMapping("/get-teacher-by-name/{name}")
     public ResponseEntity<Teacher> getTeacherByName(@PathVariable String name){

@@ -15,14 +15,14 @@ public class StudentRepository {
 
     public  void addStudent(Student student){
         studentHashMap.put(student.getName(),student);
-    }
+    } // to add student
 
     public  void addTeacher(Teacher teacher){
         teacherHashMap.put(teacher.getName(),teacher);
-    }
+    }  // to add teacher
 
-    public void addStudentTeacherPair(String student,String teacher){
-        if(studentHashMap.containsKey(student)&&teacherHashMap.containsKey(teacher)){
+    public void addStudentTeacherPair(String student,String teacher){  // to assign teacher to student
+        if(studentHashMap.containsKey(student)&&teacherHashMap.containsKey(teacher)){ // check student present   or not and check for teacher also
             List<String> listOfStudents=new ArrayList<>();
             if(teacherStudentHashMap.containsKey(teacher)){
                 listOfStudents=teacherStudentHashMap.get(teacher);
@@ -32,13 +32,19 @@ public class StudentRepository {
         }
     }
 
+    // return the student
     public Student getStudentByName(String student){
           return studentHashMap.get(student);
     }
 
+
+
+    // method to return teacher
     public  Teacher getTeacherByName(String teacher){
         return  teacherHashMap.get(teacher);
     }
+
+
 
     public List<String> getStudentsByTeacherName(String teacher){
         List<String> listOfStudents=new ArrayList<>();
