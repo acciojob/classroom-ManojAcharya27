@@ -2,6 +2,7 @@ package com.driver;
 
 public class Student {
 
+    // model class
     private String name;
     private int age;
     private double averageScore;
